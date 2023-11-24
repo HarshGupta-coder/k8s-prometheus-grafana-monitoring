@@ -1,7 +1,6 @@
 # k8s-prometheus-grafana-monitoring
 Monitor your Kubernetes cluster and pipelines with Prometheus and Grafana. This repository provides a comprehensive guide and configurations for setting up robust monitoring solutions for your Kubernetes environment.
 
-```markdown
 # Kubernetes Monitoring with Prometheus and Grafana
 
 This project provides a step-by-step guide to set up monitoring for a Kubernetes cluster and pipelines using Prometheus and Grafana.
@@ -20,12 +19,14 @@ Make sure you have the following tools installed on your system:
 ```bash
 minikube start
 ```
+![image](https://github.com/HarshGupta-coder/k8s-prometheus-grafana-monitoring/assets/54001485/8db62ea5-4af3-4bda-bbab-87419a43b1d3)
 
 ### 2. List Available Pods
 
 ```bash
 kubectl get pod -A
 ```
+![image](https://github.com/HarshGupta-coder/k8s-prometheus-grafana-monitoring/assets/54001485/00e1cc1b-4a37-4cf9-ad26-fec95ffc44ee)
 
 ### 3. Install Prometheus
 
@@ -104,6 +105,7 @@ Get Grafana Admin Password:
 ```bash
 kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 ```
+![image](https://github.com/HarshGupta-coder/k8s-prometheus-grafana-monitoring/assets/54001485/f714d310-1849-4aab-a93e-a39d3377bed1)
 
 ### 9. Connect Grafana to Prometheus
 
@@ -116,6 +118,8 @@ kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-passwor
 
 - Import a basic dashboard with code "3662".
 - Connect it to the Prometheus data source.
+![image](https://github.com/HarshGupta-coder/k8s-prometheus-grafana-monitoring/assets/54001485/17604d07-ac0a-4bd3-894b-df62f3c76b8f)
+![image](https://github.com/HarshGupta-coder/k8s-prometheus-grafana-monitoring/assets/54001485/0e0705c1-3bc5-424a-a2b1-85d35445e2a0)
 
 ### 11. Basic Prometheus Queries
 
@@ -124,6 +128,7 @@ Example Query:
 ```bash
 kube_deployment_status_replicas{namespace="default",deployment="prometheus-server"}
 ```
+![image](https://github.com/HarshGupta-coder/k8s-prometheus-grafana-monitoring/assets/54001485/5dbd35d3-e7cd-4a98-bc82-5e3777a4a82e)
 
 ### 12. Conclusion
 
